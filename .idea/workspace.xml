@@ -5,21 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/RunWebTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/StepsDefinitions.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/WebStepDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/org.automation/sample.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/org.automation/sampleweb.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,11 +149,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Cucumber Java.Feature: sampleweb" />
+        <item itemvalue="Cucumber Java.Feature: sample (1)" />
+        <item itemvalue="Cucumber Java.Feature: sample" />
         <item itemvalue="Cucumber Java.Feature: login" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Cucumber Java.Feature: sample (1)" />
-        <item itemvalue="Cucumber Java.Feature: sampleweb" />
-        <item itemvalue="Cucumber Java.Feature: sample" />
       </list>
     </recent_temporary>
   </component>
