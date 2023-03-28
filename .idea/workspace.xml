@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Testing branch diff. with comments">
-      <change afterPath="$PROJECT_DIR$/src/test/resources/org.automation/sample feature" afterDir="false" />
+    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Added three cases for Successful, Failed, and incomplete email field">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/sample.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/sampleweb.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/sample feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,6 +183,14 @@
       <option name="presentableId" value="Default" />
       <updated>1679948318598</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added three cases for Successful, Failed, and incomplete email field">
+      <created>1679985522782</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1679985522782</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -193,5 +203,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added three cases for Successful, Failed, and incomplete email field" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added three cases for Successful, Failed, and incomplete email field" />
   </component>
 </project>

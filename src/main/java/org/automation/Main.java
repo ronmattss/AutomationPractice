@@ -29,7 +29,7 @@ public class Main {
 
     public void fillLoginForm()
     {
-         WebElement userElement = browserDriver.findElement(By.xpath("/html/body/section/div/div/div[1]/div/form/input[2]"));
+        WebElement userElement = browserDriver.findElement(By.xpath("/html/body/section/div/div/div[1]/div/form/input[2]"));
         WebElement passwordElement = browserDriver.findElement(By.xpath("/html/body/section/div/div/div[1]/div/form/input[3]"));
         WebElement submitElement = browserDriver.findElement(By.xpath("/html/body/section/div/div/div[1]/div/form/button"));
         userElement.sendKeys("ronmattssgmail.com");
