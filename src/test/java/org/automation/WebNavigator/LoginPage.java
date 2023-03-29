@@ -44,7 +44,9 @@ public class LoginPage {
     public boolean verifyLogin()
     {
         try {
-            return browserDriver.findElement(By.xpath("//a[@href='/logout']")).isDisplayed();
+            String loginUsername = browserDriver.findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).getText();
+            System.out.println("Logged in as "+ loginUsername);
+            return browserDriver.findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
