@@ -5,30 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartModalComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/HomePage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/LoginPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartModalComponent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/search.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/InvoicePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/PaymentPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartProduct.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CheckoutPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/PaymentPage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/RunWebTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/RunWebTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/SearchStepsDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/StepsDefinitions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/ProductPage.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebStepDefinition.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartComponent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="adding-login-test-cases" />
+        <entry key="$PROJECT_DIR$" value="default" />
       </map>
     </option>
   </component>
@@ -68,22 +55,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "D:/Programming_Stuff/Java/AutomationPractice/src/main/java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/Programming_Stuff/Java/AutomationPractice/src/main/java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Programming_Stuff\Java\AutomationPractice\src\main\java" />
@@ -93,6 +80,7 @@
       <recent name="org.automation" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.automation.WebNavigator" />
       <recent name="org.automation" />
     </key>
   </component>
@@ -234,5 +222,22 @@
     <MESSAGE value="Changed the steps descriptions and created initial code for the search steps" />
     <MESSAGE value="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code" />
     <option name="LAST_COMMIT_MESSAGE" value="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java</url>
+          <line>17</line>
+          <properties field="cartContent" class="org.automation.WebNavigator.CartComponent" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

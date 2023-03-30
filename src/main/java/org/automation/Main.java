@@ -1,10 +1,7 @@
 package org.automation;
 
 
-import org.automation.WebNavigator.CartComponent;
-import org.automation.WebNavigator.CartModalComponent;
-import org.automation.WebNavigator.LoginPage;
-import org.automation.WebNavigator.ProductPage;
+import org.automation.WebNavigator.*;
 import org.automation.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -95,11 +92,90 @@ public class Main {
             }
             cartModal.clickContinueShoppingButton();
         }
-            cartModal.viewCart();
             // View Cart
+            cartModal.viewCart(); // I think I need to remove this and change to the default href
+
             CartComponent cartView = new CartComponent(browserDriver);
 
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch (Exception e)
+            {
+                System.out.println("pushing execution");
+            }
+            // Remove one Random Product
+        if(!cartView.getCartProductList().isEmpty())
+        {
+            cartView.RemoveCardProduct(random.nextInt(cartView.getCartProductList().size()));
 
+        }
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+
+        // I can proceed to checkout page and place my order.
+
+        cartView.clickProceedToCheckout();
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+        CheckoutPage checkoutPage = new CheckoutPage(browserDriver);
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+
+        checkoutPage.clickCheckOutButton();
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+        // Pay Order
+
+        PaymentPage paymentPage = new PaymentPage(browserDriver);
+        paymentPage.fillAndSubmitPaymentForm("John Doe", "1234567890123456", "123", "12", "2025");
+
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+
+        InvoicePage invoicePage = new InvoicePage(browserDriver);
+
+        invoicePage.clickDownloadInvoice();
+        try
+        {
+            Thread.sleep(1000);
+        }
+        catch (Exception e)
+        {
+            System.out.println("pausing execution");
+        }
+        invoicePage.clickContinue();
 
 
     }
