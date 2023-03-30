@@ -4,13 +4,31 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Moved all webpage logic to separate files following the POM design pattern">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automation/SearchStepsDefinition.java" afterDir="false" />
+    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code">
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/CartModalComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/LoginPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/automation/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartModalComponent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/search.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/automation/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/RunWebTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/RunWebTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/SearchStepsDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/StepsDefinitions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebNavigator/ProductPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automation/WebStepDefinition.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,39 +68,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Programming_Stuff/Java/AutomationPractice/src/main/java",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming_Stuff\Java\AutomationPractice\src\main\java" />
+      <recent name="D:\Programming_Stuff\Java\AutomationPractice\src\main\java\org\automation" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.automation" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.automation" />
+    </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Logging in with valid and invalid credentials">
-    <configuration name="Feature: sample (1)" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/org.automation/sample.feature" />
-      <option name="GLUE" value="org.automation" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+  <component name="RunManager" selected="Application.org.automation.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.automationtest.Main" />
       <module name="AutomationPractice" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: sample" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="PATTERN" value="org.automationtest.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -90,14 +110,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: sampleweb" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="org.automation.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.automation.Main" />
+      <module name="AutomationPractice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.automation.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Feature: login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/org.automation/sampleweb.feature" />
-      <option name="GLUE" value="org.automation" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" />
+      <option name="GLUE" value="org.automationtest" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AutomationPractice" />
       <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: sampleweb" />
+      <option name="SUGGESTED_NAME" value="Feature: login" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -129,35 +162,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Scenario: User logs in with valid and invalid credentials" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: User searches for &quot;tshirts&quot; products" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/org.automation/search.feature" />
       <option name="GLUE" value="org.automation" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AutomationPractice" />
-      <option name="NAME_FILTER" value="^User logs in with valid and invalid credentials$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User logs in with valid and invalid credentials$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User logs in with valid and invalid credentials" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: User will try to Login" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/org.automation/login.feature" />
-      <option name="GLUE" value="org.automation" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="AutomationPractice" />
-      <option name="NAME_FILTER" value="^User will try to Login$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User will try to Login$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: User will try to Login" />
+      <option name="NAME_FILTER" value="^User searches for \&quot;tshirts\&quot; products$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User searches for \&quot;tshirts\&quot; products$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User searches for &quot;tshirts&quot; products" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -171,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.org.automation.Main" />
+        <item itemvalue="Cucumber Java.Feature: login" />
+        <item itemvalue="Cucumber Java.Scenario: User searches for &quot;tshirts&quot; products" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Cucumber Java.Scenario: Logging in with valid and invalid credentials" />
-        <item itemvalue="Cucumber Java.Scenario: User will try to Login" />
-        <item itemvalue="Cucumber Java.Scenario: User logs in with valid and invalid credentials" />
-        <item itemvalue="Cucumber Java.Feature: sampleweb" />
-        <item itemvalue="Cucumber Java.Feature: sample (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -195,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1679985522782</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Changed the steps descriptions and created initial code for the search steps">
+      <created>1680051187185</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1680051187185</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -211,6 +231,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added three cases for Successful, Failed, and incomplete email field" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added three cases for Successful, Failed, and incomplete email field" />
+    <MESSAGE value="Changed the steps descriptions and created initial code for the search steps" />
+    <MESSAGE value="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a function to dismiss pop ads, added WebNavigatorHelper, cleaned up some code" />
   </component>
 </project>

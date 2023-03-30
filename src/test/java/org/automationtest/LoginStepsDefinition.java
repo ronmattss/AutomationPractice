@@ -1,14 +1,13 @@
-package org.automation;
+package org.automationtest;
 
 import io.cucumber.java.After;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.automation.WebNavigator.LoginPage;
+import org.automationtest.WebNavigator.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -16,10 +15,7 @@ public class LoginStepsDefinition  {
 
     WebDriver browserDriver = new FirefoxDriver();
     LoginPage loginPage;
-    WebElement userElement;
-    WebElement passwordElement;
-    WebElement submitElement;
-    boolean incompleteEmail = false;
+
 
     @Given("I am on the Login Page")
     public void userIsOnLogin_page()
