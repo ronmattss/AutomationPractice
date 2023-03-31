@@ -1,5 +1,6 @@
 package org.automationtest.WebNavigator;
 
+import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
@@ -7,16 +8,16 @@ import org.openqa.selenium.WebElement;
 
 public class LoginPage {
 
-    private WebDriver browserDriver;
+
     private WebElement userField;
     private WebElement passwordField;
     private WebElement submitButton;
-    public LoginPage (WebDriver driver)
+
+    public LoginPage ()
     {
-        browserDriver = driver;
-        userField = browserDriver.findElement( By.xpath("//input[@type='email'][@data-qa='login-email'][@name='email']"));
-        passwordField = browserDriver.findElement(By.xpath("//input[@type='password']"));
-        submitButton = browserDriver.findElement(By.xpath("//button[text()='Login']"));
+        userField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement( By.xpath("//input[@type='email'][@data-qa='login-email'][@name='email']"));
+        passwordField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//input[@type='password']"));
+        submitButton = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//button[text()='Login']"));
 
     }
 
@@ -26,7 +27,7 @@ public class LoginPage {
     {
         userField.sendKeys(username);
     }
-    public void filInPassword(String password)
+    public void fillInPassword(String password)
     {
         passwordField.sendKeys(password);
     }
@@ -40,12 +41,18 @@ public class LoginPage {
     public boolean verifyLogin()
     {
         try {
-            String loginUsername = browserDriver.findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).getText();
+            String loginUsername = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).getText();
             System.out.println("Logged in as "+ loginUsername);
-            return browserDriver.findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).isDisplayed();
+            return WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
+    }
+    public void Login(String username,String password)
+    {
+        fillInUsername(username);
+        fillInPassword(password);
+        clickLogin();
     }
 
 }

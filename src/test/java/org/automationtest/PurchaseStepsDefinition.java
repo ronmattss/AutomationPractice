@@ -1,12 +1,14 @@
 package org.automationtest;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.automationtest.WebNavigator.*;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.junit.After;
+import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Random;
@@ -36,18 +38,15 @@ public class PurchaseStepsDefinition {
         loginStepsDefinition.userIsInLoginPage();
         loginStepsDefinition.userIsLoggingIn(username,password);
         loginStepsDefinition.userIsLoggedIn();
-
-
-
     }
     @And("I am ready to checkout orders")
     public void userIsReadyToCheckout()
     {
-        homepage = new HomePage(browserDriver);
+        homepage = new HomePage();
 
         homepage.clickCartView();
 
-        cartView = new CartComponent(browserDriver);
+        cartView = new CartComponent();
         if(cartView.checkIfCartIsEmpty())
         {
             searchStepsDefinition.userNavigatesToTheProductsPage();
@@ -57,11 +56,11 @@ public class PurchaseStepsDefinition {
             addProductStepDefinition.userIsInProductsPageAndSearchedAProduct("tshirts");
             addProductStepDefinition.userAddProductsToTheCart(1);
             addProductStepDefinition.userVerifiesCartProducts(1);
-            cartView = new CartComponent(browserDriver);
+            cartView = new CartComponent();
         }
         cartView.clickProceedToCheckout();
 
-        checkoutPage = new CheckoutPage(browserDriver);
+        checkoutPage = new CheckoutPage();
     }
 
         @When("I proceed to checkout and place my order")
@@ -72,7 +71,7 @@ public class PurchaseStepsDefinition {
         @And("I enter my card details")
         public void userEnterDetails()
         {
-            paymentPage = new PaymentPage(browserDriver);
+            paymentPage = new PaymentPage();
             paymentPage.fillPaymentForm("John Doe", "1234567890123456", "123", "12", "2025");
 
         }
@@ -81,7 +80,7 @@ public class PurchaseStepsDefinition {
         {
             paymentPage.clickPayButton();
             WebNavigatorHelper.getInstance().pauseExecution(500);
-            invoicePage = new InvoicePage(browserDriver);
+            invoicePage = new InvoicePage();
             invoicePage.clickDownloadInvoice();
 
         }
@@ -90,6 +89,7 @@ public class PurchaseStepsDefinition {
     {
         invoicePage.clickContinue();
     }
+
 
 
 

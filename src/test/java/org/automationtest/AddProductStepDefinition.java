@@ -1,17 +1,18 @@
 package org.automationtest;
 
-import io.cucumber.java.Before;
+import io.cucumber.java.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.After;
 import org.automationtest.WebNavigator.CartComponent;
 import org.automationtest.WebNavigator.CartModalComponent;
 import org.automationtest.WebNavigator.ProductPage;
 
+import org.automationtest.WebNavigator.utils.WebDriverManager;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -23,7 +24,6 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AddProductStepDefinition {
 
-    WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
     CartModalComponent cartModal;
     CartComponent cartView;
     ProductPage productPage;
@@ -32,7 +32,14 @@ public class AddProductStepDefinition {
     SearchStepsDefinition searchStepsDefinition = new SearchStepsDefinition();
 
 
-
+    @Before
+    public void setUp(Scenario scenario) {
+        WebDriverManager.getDriver();
+    }
+    @After
+    public void tearDown(Scenario scenario) {
+        WebDriverManager.quitDriver();
+    }
     @Given("I am logged in with my credentials {string} and {string}")
     public void userVerifiesLogin(String username,String password)
     {
@@ -51,22 +58,28 @@ public class AddProductStepDefinition {
     @When("I add {int} products to my cart")
     public void userAddProductsToTheCart(int numOfProducts)
     {
-        productPage = new ProductPage(browserDriver);
-        cartModal = new CartModalComponent(browserDriver);
+        productPage = new ProductPage();
+        cartModal = new CartModalComponent();
+
         List<WebElement> products = productPage.getSearchResults();
+
         System.out.println(+products.size());
+
         for(int i = 0; i<numOfProducts; i++)
         {
             int getRandomIndex = random.nextInt(products.size());
             WebElement productCartButton = products.get(getRandomIndex);
 
             WebElement element = productCartButton;
-            ((JavascriptExecutor) browserDriver).executeScript("arguments[0].scrollIntoView(true);", element);
+            ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
 
             productPage.addProductToCart(productCartButton);
+
             products.remove(productCartButton);
             WebNavigatorHelper.getInstance().pauseExecution(500);
+
             cartModal.clickContinueShoppingButton();
+
         }
     }
     @Then("I should see {int} t-shirts in my cart")
@@ -75,10 +88,11 @@ public class AddProductStepDefinition {
         WebNavigatorHelper.getInstance().pauseExecution(500);
         cartModal.viewCart();
 
-        cartView = new CartComponent(browserDriver);
+        cartView = new CartComponent();
         WebNavigatorHelper.getInstance().pauseExecution(1000);
        // assertEquals(productsInCart,cartView.getCartSize());
     }
+
 
 
 }

@@ -1,20 +1,18 @@
 package org.automationtest.WebNavigator.utils;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
 
 public class WebNavigatorHelper {
-    private static WebNavigatorHelper instance;
-    WebDriver browserDriver;
+    private WebDriver browserDriver;
+
+    private static WebNavigatorHelper instance = null;
+
 
     private WebNavigatorHelper() {
-        browserDriver = new FirefoxDriver();
-        // private constructor
+        browserDriver = WebDriverManager.getDriver();
     }
 
     public static WebNavigatorHelper getInstance() {
@@ -82,6 +80,25 @@ public class WebNavigatorHelper {
         catch (InterruptedException e)
         {
             System.out.println(e);
+        }
+    }
+
+    public void setupDriver()
+    {
+        if (instance == null) {
+            instance = new WebNavigatorHelper();
+        }
+    }
+    public void tearDownDriver()
+    {
+        System.out.println("tearing down current scenario");
+        if(WebNavigatorHelper.getInstance().getBrowserDriver() != null)
+        {
+            try {
+                WebNavigatorHelper.getInstance().getBrowserDriver().quit();
+            } catch (NoSuchSessionException e) {
+                System.out.println("Caught NoSuchSessionException while quitting the driver: " + e.getMessage());
+            }
         }
     }
 }

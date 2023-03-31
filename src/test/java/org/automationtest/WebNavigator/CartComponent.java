@@ -12,27 +12,31 @@ import java.util.List;
 
 public class CartComponent {
 
-    WebDriver browserDriver;
+
     WebElement cartChecker;
     WebElement proceedToCheckOutButtonElement;
     List<CartProduct> cartContent;
 
-    public CartComponent(WebDriver driver)
+    public CartComponent()
     {
-        this.browserDriver = driver;
+
 //        System.out.println("?"+checkIfCartIsEmpty());
 //        System.out.println(cartChecker.getText());
-        cartChecker = browserDriver.findElement(By.id("empty_cart"));
+        cartChecker = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.id("empty_cart"));
         cartContent = new ArrayList<>();
         if(!checkIfCartIsEmpty())
         {
-            proceedToCheckOutButtonElement = browserDriver.findElement(By.xpath("//a[contains(text(),'Proceed To Checkout')]"));
+            proceedToCheckOutButtonElement = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//a[contains(text(),'Proceed To Checkout')]"));
 
             // get cartContent
-            List<WebElement> listOfProducts = browserDriver.findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
+            List<WebElement> listOfProducts = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
             for(int i =0; i<listOfProducts.size();i++)
             {
-                cartContent.add(new CartProduct(browserDriver,listOfProducts.get(i)));
+                cartContent.add(new CartProduct(WebNavigatorHelper.getInstance().getBrowserDriver()
+,listOfProducts.get(i)));
             }
         }
     }

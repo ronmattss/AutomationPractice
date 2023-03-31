@@ -1,6 +1,9 @@
 package org.automationtest;
 
+import io.cucumber.java.After;
+import io.cucumber.java.AfterStep;
 import io.cucumber.java.Before;
+import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,7 +12,6 @@ import org.automationtest.WebNavigator.CartModalComponent;
 import org.automationtest.WebNavigator.HomePage;
 import org.automationtest.WebNavigator.ProductPage;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.junit.After;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Random;
@@ -26,23 +28,28 @@ CartComponent cartView;
     CartModalComponent cartModalComponent;
     Random random = new Random();
 
+
     @Given("I am logged in with {string} and {string}")
     public void userChecksProductFromCart(String username, String password)
     {
         loginStepsDefinition.userIsInLoginPage();
         loginStepsDefinition.userIsLoggingIn(username,password);
         loginStepsDefinition.userIsLoggedIn();
+
         searchStepsDefinition.userNavigatesToTheProductsPage();
         WebNavigatorHelper.getInstance().pauseExecution(500);
     }
     @When("I View my cart I have {int} products")
     public void userRemovesAProductFromCart(int productCount)
     {
-        HomePage homePage = new HomePage(browserDriver);
+        HomePage homePage = new HomePage();
         homePage.clickCartView();
+
         WebNavigatorHelper.getInstance().pauseExecution(1000);
-         cartView = new CartComponent(browserDriver);
+         cartView = new CartComponent();
+
         System.out.println("size: "+cartView.getCartProductList().size());
+
           if( cartView.getCartProductList().size()<productCount)
          {
 
@@ -89,7 +96,7 @@ CartComponent cartView;
                 cartView.RemoveCardProduct(random.nextInt(cartView.getCartProductList().size()));
             }
         }
-        cartView = new CartComponent(browserDriver);
+        cartView = new CartComponent();
         assertEquals(productCount,cartView.getCartProductList().size());
     }
 

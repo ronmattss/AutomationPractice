@@ -1,11 +1,12 @@
 package org.automationtest.WebNavigator;
 
+import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 public class PaymentPage {
-    WebDriver browserDriver;
+
     WebElement nameOfCardField;
     WebElement cardNumberField;
     WebElement cvcField;
@@ -13,14 +14,20 @@ public class PaymentPage {
     WebElement expiryYearField;
     WebElement payButton;
 
-    public PaymentPage(WebDriver driver) {
-        browserDriver = driver;
-        nameOfCardField = browserDriver.findElement(By.xpath("//input[@name='name_on_card']"));
-        cardNumberField = browserDriver.findElement(By.xpath("//input[@name='card_number']"));
-        cvcField = browserDriver.findElement(By.xpath("//input[@name='cvc']"));
-        expirationMonthField = browserDriver.findElement(By.xpath("//input[@name='expiry_month']"));
-        expiryYearField = browserDriver.findElement(By.xpath("//input[@name='expiry_year']"));
-        payButton = driver.findElement(By.xpath("//button[@id='submit']"));
+    public PaymentPage() {
+
+        nameOfCardField = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//input[@name='name_on_card']"));
+        cardNumberField = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//input[@name='card_number']"));
+        cvcField = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//input[@name='cvc']"));
+        expirationMonthField = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//input[@name='expiry_month']"));
+        expiryYearField = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement(By.xpath("//input[@name='expiry_year']"));
+        payButton = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//button[@id='submit']"));
+
     }
 
     public void enterNameOnCard(String name) {

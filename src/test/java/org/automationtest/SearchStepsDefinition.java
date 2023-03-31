@@ -1,52 +1,53 @@
 package org.automationtest;
 
-import io.cucumber.java.Before;
+import io.cucumber.java.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 import org.automationtest.WebNavigator.LoginPage;
 import org.automationtest.WebNavigator.ProductPage;
+import org.automationtest.WebNavigator.utils.WebDriverManager;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.junit.After;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 import static org.junit.jupiter.api.Assertions.*;
+
 public class SearchStepsDefinition {
 
-    WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
 
     LoginStepsDefinition loginSteps = new LoginStepsDefinition();
+
     ProductPage productPage;
 
+
+    @Before
+    public void setUp(Scenario scenario) {
+        WebDriverManager.getDriver();
+    }
 
     @Given("I logged in using {string} and password {string}")
     public void userIsLoggedInUsingValidCredentials(String username, String password) {
         loginSteps.userIsInLoginPage();
-        loginSteps.userIsLoggingIn(username,password);
+        loginSteps.userIsLoggingIn(username, password);
         loginSteps.userIsLoggedIn();
-
     }
 
     @When("I  navigate to the Products page")
     public void userNavigatesToTheProductsPage() {
-        browserDriver.findElement(By.xpath("//a[@href='/products']")).click();
-
+        WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[@href='/products']")).click();
         // Why is there an ad?
-        System.out.println(browserDriver.switchTo().defaultContent().getTitle());
+        System.out.println(WebNavigatorHelper.getInstance().getBrowserDriver().switchTo().defaultContent().getTitle());
         // try and remove ads if present
-        try{
+        try {
             WebNavigatorHelper.getInstance().dismissAd();
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             System.out.println(e);
             System.out.println("No ads Detected");
         }
-        productPage = new ProductPage(browserDriver);
-
+        productPage = new ProductPage();
     }
 
     @When("I search for {string}")
@@ -59,5 +60,11 @@ public class SearchStepsDefinition {
     public void userShouldBeAbleToSeeTheProductsOnTheSearchResultsPage() {
         assertFalse(productPage.getSearchResults().isEmpty());
     }
+
+    @After
+    public void tearDown(Scenario scenario) {
+        WebDriverManager.quitDriver();
+    }
+
 
 }

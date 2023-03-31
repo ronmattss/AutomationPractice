@@ -1,5 +1,6 @@
 package org.automationtest.WebNavigator;
 
+import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,19 +9,20 @@ import java.util.List;
 
 public class ProductPage {
 
-    private WebDriver browserDriver;
 
     private WebElement searchBox;
     private WebElement searchButton;
     private List<WebElement> searchResults;
 
 
-    public ProductPage (WebDriver driver)
+    public ProductPage ()
     {
 
-        browserDriver = driver;
-        searchBox = browserDriver.findElement( By.xpath("//input[@id='search_product']"));
-        searchButton = browserDriver.findElement( By.xpath("//button[@id='submit_search']"));
+
+        searchBox = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement( By.xpath("//input[@id='search_product']"));
+        searchButton = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElement( By.xpath("//button[@id='submit_search']"));
         setSearchResults(By.xpath("//div[@class='productinfo text-center']//a[@data-product-id]"));
     }
 
@@ -37,7 +39,8 @@ public class ProductPage {
     public void setSearchResults(By resultElements)
     {
 
-        searchResults = browserDriver.findElements(resultElements);
+        searchResults = WebNavigatorHelper.getInstance().getBrowserDriver()
+.findElements(resultElements);
         System.out.println(getSearchResults().size());
 
     }
