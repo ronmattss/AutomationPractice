@@ -4,14 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.List;
 
 public class WebNavigatorHelper {
     private static WebNavigatorHelper instance;
-
+    WebDriver browserDriver;
 
     private WebNavigatorHelper() {
+        browserDriver = new FirefoxDriver();
         // private constructor
     }
 
@@ -22,8 +24,11 @@ public class WebNavigatorHelper {
         return instance;
     }
 
+    public WebDriver getBrowserDriver() {
+        return browserDriver;
+    }
 
-    private boolean clickDismissButton(WebDriver browserDriver) {
+    private boolean clickDismissButton() {
         if (browserDriver.findElements(By.xpath("//*[@id='dismiss-button']"))
                 .size() == 1) {
             WebElement element = browserDriver.findElement(By.xpath("//*[@id='dismiss-button']"));
@@ -36,10 +41,9 @@ public class WebNavigatorHelper {
 
     /**
      *  Function to dismiss popup ads in an iFrame
-     * @param browserDriver
      * @throws InterruptedException
      */
-    public void dismissAd(WebDriver browserDriver) throws InterruptedException
+    public void dismissAd() throws InterruptedException
     {
         System.out.println("Ad Test");
         List<WebElement> iframes = browserDriver.findElements(By.tagName("iframe"));
@@ -51,12 +55,12 @@ public class WebNavigatorHelper {
             int adCount = browserDriver.findElements((By.xpath("//div[@id='ad_position_box']"))).size();
             if(adCount == 1)
             {
-                if(clickDismissButton(browserDriver))
+                if(clickDismissButton())
                 {break;}
                 else
                 {
                     browserDriver.switchTo().frame("ad_iframe");
-                    if(clickDismissButton(browserDriver))
+                    if(clickDismissButton())
                     {
                         break;
                     }
@@ -67,5 +71,17 @@ public class WebNavigatorHelper {
         browserDriver.switchTo().parentFrame();
         Thread.sleep(1000);
         browserDriver.switchTo().defaultContent();
+    }
+
+    public void pauseExecution(long duration)
+    {
+        try
+        {
+            Thread.sleep(duration);
+        }
+        catch (InterruptedException e)
+        {
+            System.out.println(e);
+        }
     }
 }

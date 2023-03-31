@@ -44,10 +44,6 @@ public class CartComponent {
         CartProduct productCartButton = cartContent.get(cartProductIndex);
         cartContent.remove(productCartButton);
         productCartButton.deleteCartProduct();
-
-
-        // Thread.sleep(500);
-
     }
     public void clickProceedToCheckout()
     {

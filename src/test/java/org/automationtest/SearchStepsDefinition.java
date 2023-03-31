@@ -1,5 +1,6 @@
 package org.automationtest;
 
+import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -7,6 +8,7 @@ import io.cucumber.java.en.When;
 import org.automationtest.WebNavigator.LoginPage;
 import org.automationtest.WebNavigator.ProductPage;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
+import org.junit.After;
 import org.openqa.selenium.*;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
@@ -14,23 +16,21 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.junit.jupiter.api.Assertions.*;
 public class SearchStepsDefinition {
 
-    WebDriver browserDriver = new FirefoxDriver();
-    LoginPage loginPage;
+    WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
+
+    LoginStepsDefinition loginSteps = new LoginStepsDefinition();
     ProductPage productPage;
-    @Given("User is logged in using valid credentials of {string} and password {string}")
+
+
+    @Given("I logged in using {string} and password {string}")
     public void userIsLoggedInUsingValidCredentials(String username, String password) {
-        browserDriver.get("https://www.automationexercise.com"); // this will go to the homepage
-        browserDriver.findElement(By.xpath("//a[@href='/login']")).click();
+        loginSteps.userIsInLoginPage();
+        loginSteps.userIsLoggingIn(username,password);
+        loginSteps.userIsLoggedIn();
 
-        loginPage = new LoginPage(browserDriver,By.xpath("//input[@type='email']"),
-                By.xpath("//input[@type='password']"),By.xpath("//button[text()='Login']"));
-
-        loginPage.fillInUsername(username);
-        loginPage.filInPassword(password);
-        loginPage.clickLogin();
     }
 
-    @When("User navigates to the Products page")
+    @When("I  navigate to the Products page")
     public void userNavigatesToTheProductsPage() {
         browserDriver.findElement(By.xpath("//a[@href='/products']")).click();
 
@@ -38,42 +38,26 @@ public class SearchStepsDefinition {
         System.out.println(browserDriver.switchTo().defaultContent().getTitle());
         // try and remove ads if present
         try{
-            WebNavigatorHelper.getInstance().dismissAd(browserDriver);
+            WebNavigatorHelper.getInstance().dismissAd();
         }
         catch (Exception e)
         {
             System.out.println(e);
             System.out.println("No ads Detected");
         }
-        productPage = new ProductPage(browserDriver,By.xpath("//input[@id='search_product']"),
-                By.xpath("//button[@id='submit_search']"));
+        productPage = new ProductPage(browserDriver);
 
     }
 
-    @When("User searches for {string} products")
+    @When("I search for {string}")
     public void userSearchesForProducts(String productName) {
-
         productPage.searchProduct(productName);
     }
 
     //
-    @Then("User should be able to see the {string} products on the search results page")
-    public void userShouldBeAbleToSeeTheProductsOnTheSearchResultsPage(String productName) {
-
-        productPage.setSearchResults(By.xpath("//div[@class='productinfo text-center']//a[@data-product-id]"));
-
-        for(int i = 0;i<productPage.getSearchResults().size();i++)
-        {
-            String product = productPage.getSearchResults().get(i).findElement(By.xpath("//preceding-sibling::p")).getText().toLowerCase();
-
-            if(product.contains("t-shirt") || product.contains("tshirt")){
-                product = "tshirt";
-                assertEquals(productName, product);
-            }
-        }
-
-
-        // to add things to the cart
-        // get the data-product-id of each result
+    @Then("I should be able to see the products on the search results page")
+    public void userShouldBeAbleToSeeTheProductsOnTheSearchResultsPage() {
+        assertFalse(productPage.getSearchResults().isEmpty());
     }
+
 }

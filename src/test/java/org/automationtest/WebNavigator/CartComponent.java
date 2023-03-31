@@ -1,29 +1,34 @@
 package org.automationtest.WebNavigator;
 
 import org.automation.WebNavigator.CartProduct;
+import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CartComponent {
 
-    WebDriver browserDriver = new FirefoxDriver();
-    // //p[@class ='text-center']//b[contains(text(),'Cart is empty!')]
+    WebDriver browserDriver;
     WebElement cartChecker;
-    List<org.automation.WebNavigator.CartProduct> cartContent;
+    WebElement proceedToCheckOutButtonElement;
+    List<CartProduct> cartContent;
 
     public CartComponent(WebDriver driver)
     {
         this.browserDriver = driver;
-        System.out.println(checkIfCartIsEmpty());
+//        System.out.println("?"+checkIfCartIsEmpty());
+//        System.out.println(cartChecker.getText());
+        cartChecker = browserDriver.findElement(By.id("empty_cart"));
+        cartContent = new ArrayList<>();
         if(!checkIfCartIsEmpty())
         {
+            proceedToCheckOutButtonElement = browserDriver.findElement(By.xpath("//a[contains(text(),'Proceed To Checkout')]"));
+
             // get cartContent
-            cartContent = new ArrayList<>();
             List<WebElement> listOfProducts = browserDriver.findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
             for(int i =0; i<listOfProducts.size();i++)
             {
@@ -32,17 +37,40 @@ public class CartComponent {
         }
     }
 
+    public List<CartProduct> getCartProductList()
+    {
+        return cartContent;
+    }
+    public int getCartSize()
+    {
+        if (cartContent == null)
+        {
+            return 0;
+        }
+        return cartContent.size();
+    }
+    public void RemoveCardProduct(int cartProductIndex)
+    {
+        CartProduct productCartButton = cartContent.get(cartProductIndex);
+        cartContent.remove(productCartButton);
+        productCartButton.deleteCartProduct();
+    }
+    public void clickProceedToCheckout()
+    {
+        proceedToCheckOutButtonElement.click();
+    }
 
     public boolean checkIfCartIsEmpty()
     {
-        try
+
+        if(cartChecker == null)
         {
-            cartChecker = browserDriver.findElement(By.xpath("//p[@class ='text-center']//b[contains(text(),'Cart is empty!')] "));
+            return false;
         }
-        catch (Exception e)
+        else
         {
-            return  true;
+            return cartChecker.isDisplayed();
         }
-        return false;
+
     }
 }

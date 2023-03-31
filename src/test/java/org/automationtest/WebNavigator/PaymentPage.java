@@ -45,7 +45,7 @@ public class PaymentPage {
     public void clickPayButton() {
         payButton.click();
     }
-    public void fillAndSubmitPaymentForm(String nameOnCard, String cardNumber, String cvc, String expirationMonth, String expirationYear) {
+    public void fillPaymentForm(String nameOnCard, String cardNumber, String cvc, String expirationMonth, String expirationYear) {
         // Fill in the form fields
         nameOfCardField.sendKeys(nameOnCard);
         cardNumberField.sendKeys(cardNumber);
@@ -54,7 +54,7 @@ public class PaymentPage {
         expiryYearField.sendKeys(expirationYear);
 
         // Click the Pay button
-        payButton.click();
+
     }
 
 

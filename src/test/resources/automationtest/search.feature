@@ -1,7 +1,7 @@
 Feature: User searches for products on the Products page
 
   Scenario: User searches for "tshirts" products
-    Given User is logged in using valid credentials of "ronmattss@gmail.com" and password "@Ron192000"
-    When User navigates to the Products page
-    And User searches for "tshirts" products
-    Then User should be able to see the "tshirts" products on the search results page
+    Given I logged in using "ronmattss@gmail.com" and password "@Ron192000"
+    When I  navigate to the Products page
+    And I search for "tshirts"
+    Then I should be able to see the products on the search results page

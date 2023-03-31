@@ -1,6 +1,7 @@
 package org.automationtest.WebNavigator;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
@@ -17,6 +18,8 @@ public class CheckoutPage {
 
     public void clickCheckOutButton()
     {
+        ((JavascriptExecutor) browserDriver).executeScript("arguments[0].scrollIntoView(true);", placeOrderButtonElement);
+
         placeOrderButtonElement.click();
     }
 }

@@ -5,8 +5,6 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 public class LoginPage {
 
     private WebDriver browserDriver;
@@ -16,14 +14,12 @@ public class LoginPage {
     public LoginPage (WebDriver driver)
     {
         browserDriver = driver;
+        userField = browserDriver.findElement( By.xpath("//input[@type='email'][@data-qa='login-email'][@name='email']"));
+        passwordField = browserDriver.findElement(By.xpath("//input[@type='password']"));
+        submitButton = browserDriver.findElement(By.xpath("//button[text()='Login']"));
+
     }
 
-    public LoginPage(WebDriver driver, By userFieldElement, By passwordFieldElement, By submitButtonElement) {
-        browserDriver = driver;
-        userField = browserDriver.findElement(userFieldElement);
-        passwordField = browserDriver.findElement(passwordFieldElement);
-        submitButton = browserDriver.findElement(submitButtonElement);
-    }
 
 
     public void fillInUsername(String username)

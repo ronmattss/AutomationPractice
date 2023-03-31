@@ -14,11 +14,14 @@ public class ProductPage {
     private WebElement searchButton;
     private List<WebElement> searchResults;
 
-    public ProductPage (WebDriver driver, By searchBoxElement,By searchButtonElement)
+
+    public ProductPage (WebDriver driver)
     {
+
         browserDriver = driver;
-        searchBox = browserDriver.findElement(searchBoxElement);
-        searchButton = browserDriver.findElement(searchButtonElement);
+        searchBox = browserDriver.findElement( By.xpath("//input[@id='search_product']"));
+        searchButton = browserDriver.findElement( By.xpath("//button[@id='submit_search']"));
+        setSearchResults(By.xpath("//div[@class='productinfo text-center']//a[@data-product-id]"));
     }
 
 
@@ -28,6 +31,7 @@ public class ProductPage {
         searchBox.sendKeys(productName);
         searchButton.click();
     }
+
 
     // find the results of the search
     public void setSearchResults(By resultElements)
@@ -42,6 +46,11 @@ public class ProductPage {
     {
     return searchResults;
     }
+    public WebElement getTextSiblingOfResultElement(int i)
+    {
+       return getSearchResults().get(i).findElement(By.xpath("//preceding-sibling::p"));
+    }
+
 
     public void addProductToCart(WebElement product)
     {
