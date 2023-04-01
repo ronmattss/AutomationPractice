@@ -30,11 +30,6 @@ public class LoginStepsDefinition  {
     @Given("I am on the website homepage")
     public void userIsInLoginPage()
     {
-        homePage = new HomePage();
-        WebNavigatorHelper.getInstance().getBrowserDriver().get("https://www.automationexercise.com"); // this will go to the homepage
-        WebNavigatorHelper.getInstance().getBrowserDriver().manage().window().maximize();
-        WebNavigatorHelper.getInstance().pauseExecution(500);
-        homePage.clickLoginView();
         loginPage = new LoginPage();
     }
     @When("I use my credentials {string} and {string}")

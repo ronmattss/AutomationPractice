@@ -12,10 +12,9 @@ public class HomepageStepDefinition {
     HomePage homePage;
     @Given("I am on the homepage")
     public void iAmOnTheHomepage() {
-        homePage = new HomePage();
         WebNavigatorHelper.getInstance().getBrowserDriver().get("https://www.automationexercise.com"); // this will go to the homepage
         WebNavigatorHelper.getInstance().getBrowserDriver().manage().window().maximize();
-
+        homePage = new HomePage();
     }
 
     @Then("I can Login")
