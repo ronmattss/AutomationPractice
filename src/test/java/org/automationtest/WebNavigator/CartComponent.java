@@ -1,6 +1,6 @@
 package org.automationtest.WebNavigator;
 
-import org.automation.WebNavigator.CartProduct;
+import org.automationtest.WebNavigator.CartProduct;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
@@ -35,8 +35,7 @@ public class CartComponent {
 .findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
             for(int i =0; i<listOfProducts.size();i++)
             {
-                cartContent.add(new CartProduct(WebNavigatorHelper.getInstance().getBrowserDriver()
-,listOfProducts.get(i)));
+                cartContent.add(new CartProduct(listOfProducts.get(i)));
             }
         }
     }
