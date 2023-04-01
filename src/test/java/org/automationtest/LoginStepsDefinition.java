@@ -23,10 +23,7 @@ public class LoginStepsDefinition  {
 
 
 
-    @Before
-    public void setUp(Scenario scenario) {
-        WebDriverManager.getDriver();
-    }
+
     @Given("I am on the website homepage")
     public void userIsInLoginPage()
     {
@@ -45,10 +42,7 @@ public class LoginStepsDefinition  {
          assertTrue(loginPage.verifyLogin());
 
     }
-    @After
-    public void tearDown(Scenario scenario) {
-        WebDriverManager.quitDriver();
-    }
+
 
 
 

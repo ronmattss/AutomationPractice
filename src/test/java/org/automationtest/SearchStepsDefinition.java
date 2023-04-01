@@ -23,10 +23,7 @@ public class SearchStepsDefinition {
     ProductPage productPage;
 
 
-    @Before
-    public void setUp(Scenario scenario) {
-        WebDriverManager.getDriver();
-    }
+
 
     @Given("I logged in using {string} and password {string}")
     public void userIsLoggedInUsingValidCredentials(String username, String password) {
@@ -61,10 +58,7 @@ public class SearchStepsDefinition {
         assertFalse(productPage.getSearchResults().isEmpty());
     }
 
-    @After
-    public void tearDown(Scenario scenario) {
-        WebDriverManager.quitDriver();
-    }
+
 
 
 }

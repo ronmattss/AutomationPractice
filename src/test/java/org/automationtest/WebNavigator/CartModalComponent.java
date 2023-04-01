@@ -26,7 +26,7 @@ public class CartModalComponent {
     }
     public void viewCart()
     {
-        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()).executeScript("arguments[0].scrollIntoView(true);", cartModalViewCartAnchor);
+      //  ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()).executeScript("arguments[0].scrollIntoView(true);", cartModalViewCartAnchor);
         cartModalViewCartAnchor.click();
     }
     public void clickContinueShoppingButton()

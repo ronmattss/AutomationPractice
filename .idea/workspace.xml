@@ -4,15 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="I got confused">
+    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="testing each test case independently">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/HomepageStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/HomepageStepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/addproduct.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/purchase.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/removeproduct.feature" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/search.feature" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartModalComponent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartModalComponent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <recent name="org.automation" />
     </key>
   </component>
-  <component name="RunManager" selected="Cucumber Java.Scenario: Login on website">
+  <component name="RunManager" selected="Cucumber Java.Feature: homepage">
     <configuration name="Feature: homepage" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" />
@@ -92,53 +92,55 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Feature: purchase" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/purchase.feature" />
-      <option name="GLUE" value="org.automationtest" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="AutomationPractice" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: purchase" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Feature: search" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
-      <option name="CUCUMBER_CORE_VERSION" value="5" />
-      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/search.feature" />
-      <option name="GLUE" value="org.automationtest" />
-      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
-      <module name="AutomationPractice" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter" />
-      <option name="SUGGESTED_NAME" value="Feature: search" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="io.cucumber.core.cli.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Scenario: Login on website" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+    <configuration name="Scenario: Login on website and Remove 1 T-Shirt" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
       <option name="CUCUMBER_CORE_VERSION" value="5" />
       <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" />
       <option name="GLUE" value="org.automationtest" />
       <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
       <module name="AutomationPractice" />
-      <option name="NAME_FILTER" value="^Login on website$" />
-      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login on website$&quot;" />
-      <option name="SUGGESTED_NAME" value="Scenario: Login on website" />
+      <option name="NAME_FILTER" value="^Login on website and Remove 1 T\-Shirt$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Login on website and Remove 1 T\-Shirt$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Login on website and Remove 1 T-Shirt" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: Place order and Download Invoice" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" />
+      <option name="GLUE" value="org.automationtest" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="AutomationPractice" />
+      <option name="NAME_FILTER" value="^Place order and Download Invoice$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^Place order and Download Invoice$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: Place order and Download Invoice" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="io.cucumber.core.cli.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Scenario: User searches for &quot;tshirts&quot; products" type="CucumberJavaRunConfigurationType" factoryName="Cucumber java" temporary="true" nameIsGenerated="true">
+      <option name="CUCUMBER_CORE_VERSION" value="5" />
+      <option name="FILE_PATH" value="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" />
+      <option name="GLUE" value="org.automationtest" />
+      <option name="MAIN_CLASS_NAME" value="io.cucumber.core.cli.Main" />
+      <module name="AutomationPractice" />
+      <option name="NAME_FILTER" value="^User searches for \&quot;tshirts\&quot; products$" />
+      <option name="PROGRAM_PARAMETERS" value=" --plugin org.jetbrains.plugins.cucumber.java.run.CucumberJvm5SMFormatter --name &quot;^User searches for \&quot;tshirts\&quot; products$&quot;" />
+      <option name="SUGGESTED_NAME" value="Scenario: User searches for &quot;tshirts&quot; products" />
       <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -154,7 +156,7 @@
       <module name="AutomationPractice" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.automationtest.*" />
+          <option name="PATTERN" value="org.automationtest.CustomLogger.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -167,11 +169,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Cucumber Java.Scenario: Login on website" />
-        <item itemvalue="JUnit.RunWebTest" />
         <item itemvalue="Cucumber Java.Feature: homepage" />
-        <item itemvalue="Cucumber Java.Feature: search" />
-        <item itemvalue="Cucumber Java.Feature: purchase" />
+        <item itemvalue="Cucumber Java.Scenario: Login on website and Remove 1 T-Shirt" />
+        <item itemvalue="JUnit.RunWebTest" />
+        <item itemvalue="Cucumber Java.Scenario: User searches for &quot;tshirts&quot; products" />
+        <item itemvalue="Cucumber Java.Scenario: Place order and Download Invoice" />
       </list>
     </recent_temporary>
   </component>
@@ -205,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680312257135</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="testing each test case independently">
+      <created>1680312569849</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1680312569849</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -223,7 +232,8 @@
     <MESSAGE value="Added three cases for Successful, Failed, and incomplete email field" />
     <MESSAGE value="Testing single file Test cases" />
     <MESSAGE value="I got confused" />
-    <option name="LAST_COMMIT_MESSAGE" value="I got confused" />
+    <MESSAGE value="testing each test case independently" />
+    <option name="LAST_COMMIT_MESSAGE" value="testing each test case independently" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

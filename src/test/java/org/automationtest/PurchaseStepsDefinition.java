@@ -19,7 +19,8 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 public class PurchaseStepsDefinition {
 
     WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
-    HomePage homepage;
+    HomePage homepage = new HomePage();
+    LoginPage loginPage;
     ProductPage productPage;
     CartModalComponent cartModal;
     CartComponent cartView;
@@ -35,16 +36,14 @@ public class PurchaseStepsDefinition {
     @Given("I logged in with my credentials {string} and {string}")
     public void userIsLoggedIn(String username, String password)
     {
-        loginStepsDefinition.userIsInLoginPage();
-        loginStepsDefinition.userIsLoggingIn(username,password);
-        loginStepsDefinition.userIsLoggedIn();
+        homepage.clickLoginView();
+        loginPage = new LoginPage();
+        loginPage.Login(username,password);
     }
     @And("I am ready to checkout orders")
     public void userIsReadyToCheckout()
     {
-        homepage = new HomePage();
-
-        homepage.clickCartView();
+                homepage.clickCartView();
 
         cartView = new CartComponent();
         if(cartView.checkIfCartIsEmpty())

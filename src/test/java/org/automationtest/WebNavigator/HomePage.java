@@ -30,14 +30,18 @@ public class HomePage {
     }
 
     public void clickCartView() {
-        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
-        ).executeScript("arguments[0].scrollIntoView(true);", cartView);
+        cartView = WebNavigatorHelper.getInstance().getBrowserDriver()
+                .findElement(By.xpath("//a[@href='/view_cart' and contains(text(),'Cart')]"));
+//        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
+//        ).executeScript("arguments[0].scrollIntoView(true);", cartView);
         cartView.click();
     }
 
     public void clickLoginView() {
-        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
-        ).executeScript("arguments[0].scrollIntoView(true);", loginView);
+        loginView = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[@href='/login']"));
+
+//        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
+//        ).executeScript("arguments[0].scrollIntoView(true);", loginView);
         loginView.click();
     }
 

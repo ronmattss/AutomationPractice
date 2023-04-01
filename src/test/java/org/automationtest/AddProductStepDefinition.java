@@ -32,14 +32,7 @@ public class AddProductStepDefinition {
     SearchStepsDefinition searchStepsDefinition = new SearchStepsDefinition();
 
 
-    @Before
-    public void setUp(Scenario scenario) {
-        WebDriverManager.getDriver();
-    }
-    @After
-    public void tearDown(Scenario scenario) {
-        WebDriverManager.quitDriver();
-    }
+
     @Given("I am logged in with my credentials {string} and {string}")
     public void userVerifiesLogin(String username,String password)
     {
