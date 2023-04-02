@@ -1,14 +1,10 @@
 package org.automationtest;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.automationtest.WebNavigator.*;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.openqa.selenium.NoSuchSessionException;
 import org.openqa.selenium.WebDriver;
 
 import java.util.Random;

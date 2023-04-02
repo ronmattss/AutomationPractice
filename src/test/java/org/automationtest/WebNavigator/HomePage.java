@@ -29,6 +29,7 @@ public class HomePage {
 
     }
 
+
     public void clickCartView() {
         cartView = WebNavigatorHelper.getInstance().getBrowserDriver()
                 .findElement(By.xpath("//a[@href='/view_cart' and contains(text(),'Cart')]"));

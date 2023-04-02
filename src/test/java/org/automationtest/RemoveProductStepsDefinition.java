@@ -1,9 +1,5 @@
 package org.automationtest;
 
-import io.cucumber.java.After;
-import io.cucumber.java.AfterStep;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -113,6 +109,7 @@ CartComponent cartView;
         System.out.println(cartView.getCartProductList().size());
         assertEquals(productCount,cartView.getCartProductList().size());
     }
+
 
 
 }

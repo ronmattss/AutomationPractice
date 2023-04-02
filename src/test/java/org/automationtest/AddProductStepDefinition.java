@@ -1,6 +1,5 @@
 package org.automationtest;
 
-import io.cucumber.java.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -8,12 +7,9 @@ import org.automationtest.WebNavigator.CartComponent;
 import org.automationtest.WebNavigator.CartModalComponent;
 import org.automationtest.WebNavigator.ProductPage;
 
-import org.automationtest.WebNavigator.utils.WebDriverManager;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.NoSuchSessionException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.List;
@@ -85,6 +81,7 @@ public class AddProductStepDefinition {
         WebNavigatorHelper.getInstance().pauseExecution(1000);
        // assertEquals(productsInCart,cartView.getCartSize());
     }
+
 
 
 

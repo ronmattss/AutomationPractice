@@ -1,16 +1,12 @@
 package org.automationtest;
 
-import io.cucumber.java.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-import org.automationtest.WebNavigator.LoginPage;
 import org.automationtest.WebNavigator.ProductPage;
-import org.automationtest.WebNavigator.utils.WebDriverManager;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -27,6 +23,7 @@ public class SearchStepsDefinition {
 
     @Given("I logged in using {string} and password {string}")
     public void userIsLoggedInUsingValidCredentials(String username, String password) {
+        System.out.println("When is this invoked ");
         loginSteps.userIsInLoginPage();
         loginSteps.userIsLoggingIn(username, password);
         loginSteps.userIsLoggedIn();

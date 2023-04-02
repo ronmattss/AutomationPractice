@@ -12,19 +12,38 @@ public class WebNavigatorHelper {
 
 
     private WebNavigatorHelper() {
-        browserDriver = WebDriverManager.getDriver();
+        setBrowserDriver();
     }
 
     public static WebNavigatorHelper getInstance() {
         if (instance == null) {
             instance = new WebNavigatorHelper();
+
         }
         return instance;
     }
 
     public WebDriver getBrowserDriver() {
+        if(browserDriver == null)
+        {
+            setBrowserDriver();
+        }
         return browserDriver;
     }
+
+    void setBrowserDriver()
+    {
+        browserDriver = new FirefoxDriver();
+    }
+
+    public void quitBrowserDriver()
+    {
+        if(browserDriver != null)
+        {
+            browserDriver.quit();
+        }
+    }
+
 
     private boolean clickDismissButton() {
         if (browserDriver.findElements(By.xpath("//*[@id='dismiss-button']"))

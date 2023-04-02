@@ -38,7 +38,7 @@ public class LoginPage {
     }
 
     // Change all xPath
-    public boolean verifyLogin()
+    public static boolean verifyLogin()
     {
         try {
             String loginUsername = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).getText();
