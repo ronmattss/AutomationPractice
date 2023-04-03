@@ -9,10 +9,9 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.Random;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
-public class PurchaseStepsDefinition {
+public class PlaceOrderStepsDefinition {
 
     WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
     HomePage homepage = new HomePage();
@@ -23,10 +22,8 @@ public class PurchaseStepsDefinition {
     CheckoutPage checkoutPage;
     PaymentPage paymentPage;
     InvoicePage invoicePage;
-    Random random  = new Random();
-    LoginStepsDefinition loginStepsDefinition = new LoginStepsDefinition();
-    SearchStepsDefinition searchStepsDefinition = new SearchStepsDefinition();
-    AddProductStepDefinition addProductStepDefinition = new AddProductStepDefinition();
+
+
 
 
     @Given("I logged in with my credentials {string} and {string}")
@@ -44,14 +41,7 @@ public class PurchaseStepsDefinition {
         cartView = new CartComponent();
         if(cartView.checkIfCartIsEmpty())
         {
-            searchStepsDefinition.userNavigatesToTheProductsPage();
-            searchStepsDefinition.userSearchesForProducts("tshirts");
-            searchStepsDefinition.userShouldBeAbleToSeeTheProductsOnTheSearchResultsPage();
-
-            addProductStepDefinition.userIsInProductsPageAndSearchedAProduct("tshirts");
-            addProductStepDefinition.userAddProductsToTheCart(1);
-            addProductStepDefinition.userVerifiesCartProducts(1);
-            cartView = new CartComponent();
+            fail("The cart is empty");
         }
         cartView.clickProceedToCheckout();
 
@@ -76,12 +66,13 @@ public class PurchaseStepsDefinition {
             paymentPage.clickPayButton();
             WebNavigatorHelper.getInstance().pauseExecution(500);
             invoicePage = new InvoicePage();
-            invoicePage.clickDownloadInvoice();
+
 
         }
         @When("I should be able to download my invoice")
     public void userCanSeeInvoice()
     {
+        invoicePage.clickDownloadInvoice();
         invoicePage.clickContinue();
     }
 

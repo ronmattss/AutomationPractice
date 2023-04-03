@@ -3,6 +3,7 @@ package org.automationtest;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.automationtest.CustomLogger.CustomLogger;
 import org.automationtest.WebNavigator.*;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.WebDriver;
@@ -13,7 +14,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RemoveProductStepsDefinition {
     WebDriver browserDriver = WebNavigatorHelper.getInstance().getBrowserDriver();
-CartComponent cartView;
+    CartComponent cartView;
 
     SearchStepsDefinition searchStepsDefinition = new SearchStepsDefinition();
     AddProductStepDefinition addProductStepDefinition = new AddProductStepDefinition();
@@ -25,91 +26,47 @@ CartComponent cartView;
 
 
     @Given("I am logged in with {string} and {string}")
-    public void userChecksProductFromCart(String username, String password)
-    {
+    public void userChecksProductFromCart(String username, String password) {
         homePage.clickLoginView();
         loginPage = new LoginPage();
-        loginPage.Login(username,password);
+        loginPage.Login(username, password);
 
 
         searchStepsDefinition.userNavigatesToTheProductsPage();
         WebNavigatorHelper.getInstance().pauseExecution(500);
     }
-    @When("I View my cart I have {int} products")
-    public void userRemovesAProductFromCart(int productCount)
-    {
+
+    @When("I have at least {int} products in my cart")
+    public void userVerifiesCartProduct(int productCount) {
         homePage.clickCartView();
-
         WebNavigatorHelper.getInstance().pauseExecution(1000);
-         cartView = new CartComponent();
-
-        System.out.println("size: "+cartView.getCartProductList().size());
-
-        if(cartView.getCartProductList().size()> productCount)
-        {
-            WebNavigatorHelper.getInstance().pauseExecution(1000);
-            int tempSize = cartView.getCartSize() -productCount;
-            for(int i =0; i<tempSize;i++)
-            {
-                cartView.RemoveCardProduct(random.nextInt(cartView.getCartProductList().size()));
-            }
-        }
-
-        else if(cartView.getCartProductList().size()< productCount)
-        {
-            addProductStepDefinition.userIsInProductsPageAndSearchedAProduct("tshirt");
-            addProductStepDefinition.userAddProductsToTheCart( productCount - cartView.getCartProductList().size());
-            homePage.clickCartView();
-
-            cartView = new CartComponent();
-            WebNavigatorHelper.getInstance().pauseExecution(500);
-            assertEquals(productCount,cartView.getCartProductList().size());
-        }
-         else
-         {
-             assertEquals(productCount,cartView.getCartProductList().size());
-             WebNavigatorHelper.getInstance().pauseExecution(500);
-         }
-    }
-    @Then("I should have {int} product in it")
-    public void userSeeAProductInTheCart(int productCount)
-    {
-
-        if(cartView.getCartProductList().size() == 1)
-        {
-            assertEquals(productCount,cartView.getCartProductList().size());
-            return;
-        }
-        else if(cartView.getCartProductList().isEmpty() || cartView.getCartProductList().size() == 0)
-        {
-            searchStepsDefinition.userNavigatesToTheProductsPage();
-            searchStepsDefinition.userSearchesForProducts("tshirts");
-            searchStepsDefinition.userShouldBeAbleToSeeTheProductsOnTheSearchResultsPage();
-
-            addProductStepDefinition.userIsInProductsPageAndSearchedAProduct("tshirts");
-            addProductStepDefinition.userAddProductsToTheCart(1);
-            addProductStepDefinition.userVerifiesCartProducts(1);
+        cartView = new CartComponent();
+        if (cartView.getCartProductList().isEmpty()) {
+            CustomLogger.logInfo("There are no products in the cart");
+            fail("There are no products in the cart");
+        } else if (cartView.getCartProductList().size() > productCount) {
+            CustomLogger.logInfo("You have " + cartView.getCartProductList().size() + " product/s");
+            fail("Expected " + productCount + " products, but found " + cartView.getCartProductList().size());
         }
         else
-        {
-            int tempSize = cartView.getCartSize() -productCount;
-            if(tempSize == 0)
-            {
-                assertEquals(productCount,cartView.getCartProductList().size());
-            }
-            else
-            {
-                for(int i =0; i<tempSize;i++)
-                {
-                    cartView.RemoveCardProduct(random.nextInt(cartView.getCartProductList().size()));
-                }
-            }
+            CustomLogger.logInfo("You have " + cartView.getCartProductList().size() + " product/s");
+            assertTrue(true);
+    }
 
+    @Then("I remove a product and I should have {int} products left")
+    public void userRemovesAProduct(int productCount) {
+        // if cart is empty don't remove anything
+        if (cartView.getCartProductList().isEmpty()) {
+            CustomLogger.logInfo("Cart is empty");
+            fail("Cart is empty");
+        } else if (cartView.getCartProductList().size() == productCount + 1) {
+            cartView.RemoveCardProduct(random.nextInt(cartView.getCartProductList().size()));
+            assertEquals(productCount, cartView.getCartProductList().size(), "Expected " + productCount + " products, but found " + cartView.getCartProductList().size());
+        } else {
+            assertEquals(productCount, cartView.getCartProductList().size());
         }
-        System.out.println(cartView.getCartProductList().size());
-        assertEquals(productCount,cartView.getCartProductList().size());
+    }
+
     }
 
 
-
-}

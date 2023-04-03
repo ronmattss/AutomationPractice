@@ -23,12 +23,20 @@ Feature: I want to buy a t-shirt
 
   Scenario:Login on website and Remove 1 T-Shirt
     Given I am logged in with "ronmattss@gmail.com" and "@Ron192000"
-    When I View my cart I have 2 products
-    Then I should have 1 product in it
+    When I have at least 2 products in my cart
+    Then I remove a product and I should have 1 products left
 
   Scenario: Place order and Download Invoice
     Given I logged in with my credentials "ronmattss@gmail.com" and "@Ron192000"
-    And I am ready to checkout orders
+    Given I have at least 1 products in my cart
+    Given I am on the Payment page
+    When I enter my card details
+    Then I am ready to checkout orders
+
+    Scenario: I am ready to checkout
+      Given I am in the website and logged in with my credentials "ronmattss@gmail.com" and "@Ron192000"
+      Given I have at least 1 product to my cart
+      Given I am on the checkout page
     When I proceed to checkout and place my order
     Then I enter my card details
     When I Confirm my order

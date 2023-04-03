@@ -54,7 +54,11 @@ public class ProductPage {
        return getSearchResults().get(i).findElement(By.xpath("//preceding-sibling::p"));
     }
 
+    public static void clickCartView()
+    {
+        WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[@href='/view_cart']")).click();
 
+    }
     public void addProductToCart(WebElement product)
     {
         product.click();

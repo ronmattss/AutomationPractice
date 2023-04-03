@@ -79,7 +79,7 @@ public class AddProductStepDefinition {
 
         cartView = new CartComponent();
         WebNavigatorHelper.getInstance().pauseExecution(1000);
-       // assertEquals(productsInCart,cartView.getCartSize());
+        assertEquals(productsInCart,cartView.getCartSize());
     }
 
 

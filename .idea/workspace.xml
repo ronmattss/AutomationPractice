@@ -5,19 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Test Cases works independently, creating initial classes for a logger">
+      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/CheckoutStepsDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/cartview.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/removeitem.feature" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/verifycheckout.feature" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/CustomLogger/CustomLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/CustomLogger/CustomLogger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/HomepageStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/HomepageStepDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/PlaceOrderStepsDefinition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/SearchStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/HomePage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/LoginPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebDriverManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +33,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="adding-test-cases-for-each-step" />
+        <entry key="$PROJECT_DIR$" value="default" />
       </map>
     </option>
   </component>
@@ -66,6 +65,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "D:/Programming_Stuff/Java/AutomationPractice/src/test/resources/automationtest",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
@@ -73,8 +73,14 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Programming_Stuff\Java\AutomationPractice\src\test\resources\automationtest" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.automation" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="org.automationtest" />
     </key>
   </component>
   <component name="RunManager" selected="Cucumber Java.Feature: homepage">
