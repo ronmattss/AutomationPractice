@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Test Cases works independently, creating initial classes for a logger">
-      <change afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/CheckoutStepsDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/cartview.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/login.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/removeitem.feature" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/automationtest/verifycheckout.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/AddProductStepDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/LoginStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/PurchaseStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/PlaceOrderStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/RemoveProductStepsDefinition.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/ProductPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/automationtest/homepage.feature" afterDir="false" />
-    </list>
+    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Trying out Some more test scenarios" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -232,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680327637952</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Trying out Some more test scenarios">
+      <created>1680557276481</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1680557276481</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -252,7 +246,8 @@
     <MESSAGE value="I got confused" />
     <MESSAGE value="testing each test case independently" />
     <MESSAGE value="Test Cases works independently, creating initial classes for a logger" />
-    <option name="LAST_COMMIT_MESSAGE" value="Test Cases works independently, creating initial classes for a logger" />
+    <MESSAGE value="Trying out Some more test scenarios" />
+    <option name="LAST_COMMIT_MESSAGE" value="Trying out Some more test scenarios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
