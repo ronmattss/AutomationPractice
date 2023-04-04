@@ -1,40 +1,39 @@
 package org.automationtest.WebNavigator;
 
-import org.automationtest.WebNavigator.CartProduct;
+import org.automationtest.CustomLogger.CustomLogger;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class CartComponent {
+public class CartPage {
 
 
-    WebElement cartChecker;
-    WebElement proceedToCheckOutButtonElement;
-    List<CartProduct> cartContent;
+    private WebDriver driver;
+    private WebElement cartChecker;
+    private WebElement proceedToCheckOutButtonElement;
+    private List<CartProduct> cartContent;
 
-    public CartComponent()
+
+    /**
+     * Initializes Cart page
+     * Gets the list of products if available
+     */
+    public CartPage()
     {
 
-//        System.out.println("?"+checkIfCartIsEmpty());
-//        System.out.println(cartChecker.getText());
-        cartChecker = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.id("empty_cart"));
+        this.driver = WebNavigatorHelper.getInstance().getBrowserDriver();
+        cartChecker = driver.findElement(By.id("empty_cart"));
         cartContent = new ArrayList<>();
-        if(!checkIfCartIsEmpty())
-        {
-            proceedToCheckOutButtonElement = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//a[contains(text(),'Proceed To Checkout')]"));
+        if (!checkIfCartIsEmpty()) {
+            proceedToCheckOutButtonElement = driver.findElement(By.xpath("//a[contains(text(),'Proceed To Checkout')]"));
 
             // get cartContent
-            List<WebElement> listOfProducts = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
-            for(int i =0; i<listOfProducts.size();i++)
-            {
+            List<WebElement> listOfProducts = driver.findElements(By.xpath("//tr[starts-with(@id,'product-')]"));
+            for (int i = 0; i < listOfProducts.size(); i++) {
                 cartContent.add(new CartProduct(listOfProducts.get(i)));
             }
         }
@@ -55,6 +54,7 @@ public class CartComponent {
     public void RemoveCardProduct(int cartProductIndex)
     {
         CartProduct productCartButton = cartContent.get(cartProductIndex);
+        CustomLogger.logInfo("Removing product: "+ cartProductIndex);
         cartContent.remove(productCartButton);
         productCartButton.deleteCartProduct();
     }
@@ -62,6 +62,7 @@ public class CartComponent {
     {
         proceedToCheckOutButtonElement.click();
     }
+
 
     public boolean checkIfCartIsEmpty()
     {

@@ -33,16 +33,17 @@ public class HomePage {
     public void clickCartView() {
         cartView = WebNavigatorHelper.getInstance().getBrowserDriver()
                 .findElement(By.xpath("//a[@href='/view_cart' and contains(text(),'Cart')]"));
-//        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
-//        ).executeScript("arguments[0].scrollIntoView(true);", cartView);
+        // For some browser reason, sometimes this is not needed
+        // ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
+        // ).executeScript("arguments[0].scrollIntoView(true);", cartView);
         cartView.click();
     }
 
     public void clickLoginView() {
         loginView = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[@href='/login']"));
 
-//        ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
-//        ).executeScript("arguments[0].scrollIntoView(true);", loginView);
+     //   ((JavascriptExecutor) WebNavigatorHelper.getInstance().getBrowserDriver()
+     //   ).executeScript("arguments[0].scrollIntoView(true);", loginView);
         loginView.click();
     }
 

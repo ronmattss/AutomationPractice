@@ -14,6 +14,9 @@ public class PaymentPage {
     WebElement expiryYearField;
     WebElement payButton;
 
+    /**
+     * Instantiate Payment page and it's components
+     */
     public PaymentPage() {
 
         nameOfCardField = WebNavigatorHelper.getInstance().getBrowserDriver()
@@ -54,12 +57,11 @@ public class PaymentPage {
     }
     public void fillPaymentForm(String nameOnCard, String cardNumber, String cvc, String expirationMonth, String expirationYear) {
         // Fill in the form fields
-        nameOfCardField.sendKeys(nameOnCard);
-        cardNumberField.sendKeys(cardNumber);
-        cvcField.sendKeys(cvc);
-        expirationMonthField.sendKeys(expirationMonth);
-        expiryYearField.sendKeys(expirationYear);
-
+        enterNameOnCard(nameOnCard);
+        enterCardNumber(cardNumber);
+        enterCVC(cvc);
+        enterExpirationMonth(expirationMonth);
+        enterExpirationYear(expirationYear);
         // Click the Pay button
 
     }

@@ -17,6 +17,8 @@ public class CustomLogger {
     }
 
     public static void logInfo(String message) {
+        // printing when
+        System.out.println("");
         LOGGER.log(Level.INFO, message);
     }
     public static void logWarning(String message)

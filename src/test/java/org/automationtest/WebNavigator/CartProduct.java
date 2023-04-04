@@ -12,6 +12,10 @@ public class CartProduct {
     WebElement cartDeleteElement;
 
 
+    /**
+     *
+     * @param productElement This is the product shown in a cart
+     */
     public CartProduct(WebElement productElement)
     {
         productIDElement = productElement;

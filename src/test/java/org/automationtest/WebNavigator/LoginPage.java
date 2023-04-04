@@ -18,11 +18,10 @@ public class LoginPage {
         userField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement( By.xpath("//input[@type='email'][@data-qa='login-email'][@name='email']"));
         passwordField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//input[@type='password']"));
         submitButton = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//button[text()='Login']"));
-
     }
 
 
-
+    // Form methods
     public void fillInUsername(String username)
     {
         userField.sendKeys(username);
@@ -37,7 +36,10 @@ public class LoginPage {
         submitButton.click();
     }
 
-    // Change all xPath
+    /**
+     * verifies the login of the user
+     */
+
     public static boolean verifyLogin()
     {
         try {
@@ -48,6 +50,9 @@ public class LoginPage {
             return false;
         }
     }
+    /**
+     * fills the form and clicks the button for the login
+     */
     public void Login(String username,String password)
     {
         fillInUsername(username);

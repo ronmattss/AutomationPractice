@@ -6,6 +6,7 @@ import io.cucumber.java.en.When;
 import org.automationtest.CustomLogger.CustomLogger;
 import org.automationtest.WebNavigator.HomePage;
 import org.automationtest.WebNavigator.LoginPage;
+import org.automationtest.WebNavigator.ProductPage;
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -13,24 +14,32 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LoginStepsDefinition  {
 
     LoginPage loginPage;
-    HomePage homePage;
 
+    /**
+     * Part of the recurring Scenario
+     * Logs in the user
+     */
 
-
-
-    @Given("I am on the website homepage")
-    public void userIsInLoginPage(){
-        loginPage = new LoginPage();
-    }
+    /**
+     * Logs in the user with
+     * @param username the username of the user
+     * @param password the password of the user
+     */
     @When("I use my credentials {string} and {string}")
     public void userIsLoggingIn(String username, String password)
     {
+        loginPage = new LoginPage();
         CustomLogger.logInfo("User is logging in");
 
         loginPage.Login(username,password);
         WebNavigatorHelper.getInstance().pauseExecution(500);
 
     }
+
+    /**
+     * verifies the login
+     *
+     */
     @Then("I am logged in and can see the products page")
     public  void userIsLoggedIn()
     {

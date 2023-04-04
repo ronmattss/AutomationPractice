@@ -11,6 +11,11 @@ public class CartModalComponent {
     private WebElement cartModalViewCartAnchor;
     private WebElement cartModal;
 
+
+    /**
+     * Constructor for the Cart component. Initializes the cart checker, proceeds to checkout button element,
+     * and cart content.
+     */
     public CartModalComponent()
     {
 
@@ -20,6 +25,10 @@ public class CartModalComponent {
 
     }
 
+    /**
+     * Returns the list of cart products
+     * @return the list of cart products
+     */
     public boolean checkIfModalIsShown()
     {
         return cartModal.isDisplayed();
