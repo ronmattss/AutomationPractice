@@ -2,11 +2,14 @@ package org.automationtest.WebNavigator.utils;
 
 import org.automationtest.CustomLogger.CustomLogger;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 import java.util.List;
+
 
 public class WebNavigatorHelper {
     private WebDriver browserDriver;
@@ -46,15 +49,13 @@ public class WebNavigatorHelper {
      */
     void setBrowserDriver()
     {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--remote-allow-origins=*");
-        browserDriver = new ChromeDriver(options);
+        browserDriver = new FirefoxDriver();
     }
+
+
     /**
      * Quits the browser driver instance
      */
-
-
     public void quitBrowserDriver()
     {
         if(browserDriver != null)
@@ -129,29 +130,21 @@ public class WebNavigatorHelper {
      */
     public void pauseExecution(long duration)
     {
-        try
-        {
-            Thread.sleep(duration);
-        }
-        catch (InterruptedException e)
-        {
-            System.out.println(e);
-        }
+
+        browserDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(duration));
+
     }
 
     /**
-     * Tears down the WebNavigatorHelper instance
+     * To make sure buttons works
+     * @param button the button to be clicked
+     * @param duration duration in milliseconds to wait
      */
-    public void tearDownDriver()
+    public void waitButton(WebElement button, long duration)
     {
-        System.out.println("tearing down current scenario");
-        if(WebNavigatorHelper.getInstance().getBrowserDriver() != null)
-        {
-            try {
-                WebNavigatorHelper.getInstance().getBrowserDriver().quit();
-            } catch (NoSuchSessionException e) {
-                System.out.println("Caught NoSuchSessionException while quitting the driver: " + e.getMessage());
-            }
-        }
+        WebDriverWait wait = new WebDriverWait(WebNavigatorHelper.getInstance().getBrowserDriver(), Duration.ofMillis(duration));
+        wait.until(ExpectedConditions.elementToBeClickable(button));
+        button.click();
     }
+
 }

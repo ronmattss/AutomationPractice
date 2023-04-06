@@ -1,23 +1,30 @@
 package org.automationtest.WebNavigator;
 
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class LoginPage {
 
 
+    @FindBy(xpath = "//input[@type='email'][@data-qa='login-email'][@name='email']")
     private WebElement userField;
+    @FindBy(xpath = "//input[@type='password']")
+
     private WebElement passwordField;
+    @FindBy(xpath = "//button[text()='Login']")
+
     private WebElement submitButton;
+    @FindBy(xpath = "//a[contains(text(), 'Logged in as')]//b")
+    private  WebElement loginUsername;
+
 
     public LoginPage ()
     {
-        userField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement( By.xpath("//input[@type='email'][@data-qa='login-email'][@name='email']"));
-        passwordField = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//input[@type='password']"));
-        submitButton = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//button[text()='Login']"));
+        PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
+
     }
 
 
@@ -40,12 +47,10 @@ public class LoginPage {
      * verifies the login of the user
      */
 
-    public static boolean verifyLogin()
+    public  boolean verifyLogin()
     {
         try {
-            String loginUsername = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).getText();
-            System.out.println("Logged in as "+ loginUsername);
-            return WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//a[contains(text(), 'Logged in as')]//b")).isDisplayed();
+            return loginUsername.isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }

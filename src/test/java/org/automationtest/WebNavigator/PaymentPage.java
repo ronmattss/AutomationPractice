@@ -1,36 +1,37 @@
 package org.automationtest.WebNavigator;
 
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class PaymentPage {
 
-    WebElement nameOfCardField;
-    WebElement cardNumberField;
-    WebElement cvcField;
-    WebElement expirationMonthField;
-    WebElement expiryYearField;
-    WebElement payButton;
+    @FindBy(name = "name_on_card")
+    private WebElement nameOfCardField;
+
+    @FindBy(name = "card_number")
+    private WebElement cardNumberField;
+
+    @FindBy(name = "cvc")
+    private WebElement cvcField;
+
+    @FindBy(name = "expiry_month")
+    private WebElement expirationMonthField;
+
+    @FindBy(name = "expiry_year")
+    private WebElement expiryYearField;
+
+    @FindBy(id = "submit")
+    private WebElement payButton;
+
 
     /**
      * Instantiate Payment page and it's components
      */
     public PaymentPage() {
 
-        nameOfCardField = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//input[@name='name_on_card']"));
-        cardNumberField = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//input[@name='card_number']"));
-        cvcField = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//input[@name='cvc']"));
-        expirationMonthField = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//input[@name='expiry_month']"));
-        expiryYearField = WebNavigatorHelper.getInstance().getBrowserDriver()
-.findElement(By.xpath("//input[@name='expiry_year']"));
-        payButton = WebNavigatorHelper.getInstance().getBrowserDriver().findElement(By.xpath("//button[@id='submit']"));
-
+        PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
     }
 
     public void enterNameOnCard(String name) {
@@ -53,7 +54,8 @@ public class PaymentPage {
         expiryYearField.sendKeys(year);
     }
     public void clickPayButton() {
-        payButton.click();
+        WebNavigatorHelper.getInstance().waitButton(payButton, 500);
+
     }
     public void fillPaymentForm(String nameOnCard, String cardNumber, String cvc, String expirationMonth, String expirationYear) {
         // Fill in the form fields

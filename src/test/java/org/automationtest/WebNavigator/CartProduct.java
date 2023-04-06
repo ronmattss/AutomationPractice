@@ -1,8 +1,9 @@
 package org.automationtest.WebNavigator;
 
+import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
 
 public class CartProduct {
 
@@ -18,12 +19,13 @@ public class CartProduct {
      */
     public CartProduct(WebElement productElement)
     {
+
         productIDElement = productElement;
         cartDeleteElement = productIDElement.findElement(By.xpath("//td[@class='cart_delete']"));
     }
 
     public void deleteCartProduct()
     {
-        cartDeleteElement.click();
+        WebNavigatorHelper.getInstance().waitButton(cartDeleteElement, 500);
     }
 }
