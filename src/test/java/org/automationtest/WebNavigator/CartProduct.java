@@ -1,6 +1,6 @@
 package org.automationtest.WebNavigator;
 
-import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -26,6 +26,6 @@ public class CartProduct {
 
     public void deleteCartProduct()
     {
-        WebNavigatorHelper.getInstance().waitButton(cartDeleteElement, 500);
+        cartDeleteElement.click();
     }
 }

@@ -172,6 +172,8 @@ public class ProductBuyingStepDefinition {
     @Then("I remove a product and I should have {int} products left")
     public void userRemovesAProduct(int productCount) {
         // if cart is empty don't remove anything
+        cartComponent = new CartPage();
+
         if (cartComponent.getCartProductList().isEmpty()) {
             CustomLogger.logInfo("There are no products in the cart");
             assertTrue(cartComponent.getCartProductList().isEmpty(), "There are no products in the cart");
