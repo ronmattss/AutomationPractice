@@ -17,7 +17,7 @@ public class LoginPage {
     @FindBy(xpath = "//button[text()='Login']")
 
     private WebElement submitButton;
-    @FindBy(xpath = "//a[contains(text(), 'Logged in as')]//b")
+    @FindBy(xpath = "//a[contains(text(), 'Logged in as')]/b")
     private WebElement loginUsername;
 
 

@@ -46,7 +46,7 @@ public class ProductBuyingStepDefinition {
 
 
     @Then("I can Login")
-    public void iCanLogin() {
+    public void userCanLogin() {
         CustomLogger.logInfo("Going to Login page");
         homePage.clickLoginView();
     }

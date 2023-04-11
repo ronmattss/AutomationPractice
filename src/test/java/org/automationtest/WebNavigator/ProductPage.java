@@ -1,7 +1,6 @@
 package org.automationtest.WebNavigator;
 
 import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -21,7 +20,7 @@ public class ProductPage {
     private WebElement cartModalViewCartAnchor;
     @FindBy(id = "cartModal")
     private WebElement cartModal;
-    @FindBy(xpath = "//div[@class='productinfo text-center']//a[@data-product-id]")
+    @FindBy(xpath = "//div[@class='productinfo text-center']/a[@data-product-id]")
     private List<WebElement> searchResults;
 
 
