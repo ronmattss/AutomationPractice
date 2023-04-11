@@ -4,6 +4,7 @@ import org.automationtest.WebNavigator.utils.WebNavigatorHelper;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
 import java.util.List;
 
 public class ProductPage {
@@ -24,14 +25,15 @@ public class ProductPage {
     private List<WebElement> searchResults;
 
 
-
-    public ProductPage () {
+    public ProductPage() {
         PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
     }
+
     public void searchProduct(String productName) {
         searchBox.sendKeys(productName);
         searchButton.click();
     }
+
     public List<WebElement> getSearchResults() {
         return searchResults;
     }
@@ -39,11 +41,11 @@ public class ProductPage {
 
     public void addProductToCart(WebElement product) {
 
-        WebNavigatorHelper.getInstance().waitButton(product,500);
+        WebNavigatorHelper.getInstance().waitButton(product, 500);
     }
-    public void clickContinueShoppingButton()
-    {
-        WebNavigatorHelper.getInstance().waitButton(cartModalContinueButton,500);
+
+    public void clickContinueShoppingButton() {
+        WebNavigatorHelper.getInstance().waitButton(cartModalContinueButton, 500);
     }
 
 }

@@ -1,8 +1,10 @@
 package org.automationtest.WebNavigator.utils;
 
 import org.automationtest.CustomLogger.CustomLogger;
-import org.openqa.selenium.*;
-
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -12,14 +14,14 @@ import java.util.List;
 
 
 public class WebNavigatorHelper {
+    private static WebNavigatorHelper instance = null;
     private WebDriver browserDriver;
 
-
-    private static WebNavigatorHelper instance = null;
     // Private constructor to prevent direct instantiation
     private WebNavigatorHelper() {
         setBrowserDriver();
     }
+
     /**
      * Returns a singleton instance of WebNavigatorHelper
      *
@@ -32,23 +34,23 @@ public class WebNavigatorHelper {
         }
         return instance;
     }
+
     /**
      * Returns the browser driver instance
      *
      * @return WebDriver instance
      */
     public WebDriver getBrowserDriver() {
-        if(browserDriver == null)
-        {
+        if (browserDriver == null) {
             setBrowserDriver();
         }
         return browserDriver;
     }
+
     /**
      * Sets up the browser driver instance
      */
-    void setBrowserDriver()
-    {
+    void setBrowserDriver() {
         browserDriver = new FirefoxDriver();
     }
 
@@ -56,10 +58,8 @@ public class WebNavigatorHelper {
     /**
      * Quits the browser driver instance
      */
-    public void quitBrowserDriver()
-    {
-        if(browserDriver != null)
-        {
+    public void quitBrowserDriver() {
+        if (browserDriver != null) {
             browserDriver.quit();
         }
     }
@@ -85,37 +85,29 @@ public class WebNavigatorHelper {
      *
      * @throws InterruptedException
      */
-    public void dismissAd()
-    {
+    public void dismissAd() {
         System.out.println("Ad Test");
         CustomLogger.logWarning("Trying to dismiss ads");
-        try
-        {
+        try {
             List<WebElement> iframes = browserDriver.findElements(By.tagName("iframe"));
 
-            for(int i = 0;i<iframes.size();i++)
-            {
+            for (int i = 0; i < iframes.size(); i++) {
                 browserDriver.switchTo().frame(i);
-                System.out.println("frame: "+i);
+                System.out.println("frame: " + i);
                 int adCount = browserDriver.findElements((By.xpath("//div[@id='ad_position_box']"))).size();
-                if(adCount == 1)
-                {
-                    if(clickDismissButton())
-                    {break;}
-                    else
-                    {
+                if (adCount == 1) {
+                    if (clickDismissButton()) {
+                        break;
+                    } else {
                         browserDriver.switchTo().frame("ad_iframe");
-                        if(clickDismissButton())
-                        {
+                        if (clickDismissButton()) {
                             break;
                         }
                     }
                 }
                 browserDriver.switchTo().parentFrame();
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             CustomLogger.logInfo("No popup ads dismissed");
         }
 
@@ -130,8 +122,7 @@ public class WebNavigatorHelper {
      *
      * @param duration duration to pause in milliseconds
      */
-    public void pauseExecution(long duration)
-    {
+    public void pauseExecution(long duration) {
 
         browserDriver.manage().timeouts().implicitlyWait(Duration.ofMillis(duration));
 
@@ -139,12 +130,12 @@ public class WebNavigatorHelper {
 
     /**
      * To make sure buttons works
-     * @param button the button to be clicked
+     *
+     * @param button   the button to be clicked
      * @param duration duration in milliseconds to wait
      */
-    public void waitButton(WebElement button, long duration)
-    {
-        CustomLogger.logInfo("Simulating Button click: "+ button.getText());
+    public void waitButton(WebElement button, long duration) {
+        CustomLogger.logInfo("Simulating Button click: " + button.getText());
         WebDriverWait wait = new WebDriverWait(WebNavigatorHelper.getInstance().getBrowserDriver(), Duration.ofMillis(duration));
         wait.until(ExpectedConditions.elementToBeClickable(button));
         button.click();

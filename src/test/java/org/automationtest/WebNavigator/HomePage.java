@@ -20,12 +20,11 @@ public class HomePage {
 
 
     public HomePage() {
-       PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
+        PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
 
     }
 
-    public void goToProductPage()
-    {
+    public void goToProductPage() {
         productPageAnchor.click(); // this will go to the homepage
     }
 

@@ -12,14 +12,14 @@ import java.util.List;
 public class CartPage {
 
 
+    @FindBy(xpath = "//tr[starts-with(@id,'product-')]")
+    List<WebElement> listOfProducts;
     @FindBy(id = "empty_cart")
     private WebElement cartChecker;
     @FindBy(xpath = "//a[contains(text(),'Proceed To Checkout')]")
     private WebElement proceedToCheckOutButtonElement;
     @FindBy(xpath = "//tr[starts-with(@id,'product-')]")
-    private List<CartProduct> cartContent;
-    @FindBy(xpath = "//tr[starts-with(@id,'product-')]")
-    List<WebElement> listOfProducts;
+    private final List<CartProduct> cartContent;
 
 
     /**
@@ -55,7 +55,7 @@ public class CartPage {
     }
 
     public void clickProceedToCheckout() {
-        WebNavigatorHelper.getInstance().waitButton(proceedToCheckOutButtonElement,500);
+        WebNavigatorHelper.getInstance().waitButton(proceedToCheckOutButtonElement, 500);
     }
 
 

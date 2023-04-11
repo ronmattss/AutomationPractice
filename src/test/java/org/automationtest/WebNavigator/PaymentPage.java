@@ -53,10 +53,12 @@ public class PaymentPage {
     public void enterExpirationYear(String year) {
         expiryYearField.sendKeys(year);
     }
+
     public void clickPayButton() {
         WebNavigatorHelper.getInstance().waitButton(payButton, 500);
 
     }
+
     public void fillPaymentForm(String nameOnCard, String cardNumber, String cvc, String expirationMonth, String expirationYear) {
         // Fill in the form fields
         enterNameOnCard(nameOnCard);

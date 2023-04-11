@@ -12,13 +12,11 @@ public class CheckoutPage {
     @FindBy(xpath = "//a[@href='/payment' and contains(@class, 'check_out') and text()='Place Order']")
     WebElement placeOrderButtonElement;
 
-    public CheckoutPage()
-    {
+    public CheckoutPage() {
         PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
     }
 
-    public void clickCheckOutButton()
-    {
-        WebNavigatorHelper.getInstance().waitButton(placeOrderButtonElement,500);
+    public void clickCheckOutButton() {
+        WebNavigatorHelper.getInstance().waitButton(placeOrderButtonElement, 500);
     }
 }

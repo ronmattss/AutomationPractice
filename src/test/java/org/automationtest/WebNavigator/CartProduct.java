@@ -14,18 +14,15 @@ public class CartProduct {
 
 
     /**
-     *
      * @param productElement This is the product shown in a cart
      */
-    public CartProduct(WebElement productElement)
-    {
+    public CartProduct(WebElement productElement) {
 
         productIDElement = productElement;
         cartDeleteElement = productIDElement.findElement(By.xpath("//td[@class='cart_delete']"));
     }
 
-    public void deleteCartProduct()
-    {
+    public void deleteCartProduct() {
         cartDeleteElement.click();
     }
 }
