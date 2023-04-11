@@ -136,7 +136,7 @@ public class WebNavigatorHelper {
      */
     public void waitButton(WebElement button, long duration) {
         CustomLogger.logInfo("Simulating Button click: " + button.getText());
-        WebDriverWait wait = new WebDriverWait(WebNavigatorHelper.getInstance().getBrowserDriver(), Duration.ofMillis(duration));
+        WebDriverWait wait = new WebDriverWait(getBrowserDriver(), Duration.ofMillis(duration));
         wait.until(ExpectedConditions.elementToBeClickable(button));
         button.click();
     }

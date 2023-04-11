@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="shortened some xPaths from the LoginPage and ProductPage">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartProduct.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/CartProduct.java" afterDir="false" />
+    <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Fixed code formatting">
       <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -250,7 +247,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681233562511</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed code formatting">
+      <created>1681234551437</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1681234551437</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -274,7 +278,8 @@
     <MESSAGE value="fixed some bugs in cart view" />
     <MESSAGE value="cleaned repo" />
     <MESSAGE value="shortened some xPaths from the LoginPage and ProductPage" />
-    <option name="LAST_COMMIT_MESSAGE" value="shortened some xPaths from the LoginPage and ProductPage" />
+    <MESSAGE value="Fixed code formatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed code formatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
