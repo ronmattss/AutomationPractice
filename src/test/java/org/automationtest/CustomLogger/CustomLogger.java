@@ -17,12 +17,15 @@ public class CustomLogger {
     }
 
     public static void logInfo(String message) {
-        // printing when
-        System.out.println("");
         LOGGER.log(Level.INFO, message);
     }
     public static void logWarning(String message)
     {
         LOGGER.log(Level.WARNING, message);
     }
+    public static void logError(String message)
+    {
+        LOGGER.log(Level.SEVERE, message);
+    }
+
 }

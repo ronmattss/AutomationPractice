@@ -112,8 +112,7 @@ public class ProductBuyingStepDefinition {
     @When("I add {int} products to my cart")
     public void userAddProductsToTheCart(int numberOfProducts) {
         //Randomly add a product
-        for(int i = 0; i<numberOfProducts; i++)
-        {
+        for (int i = 0; i < numberOfProducts; i++) {
             int getRandomIndex = random.nextInt(productPage.getSearchResults().size());
 
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

@@ -18,28 +18,25 @@ public class LoginPage {
 
     private WebElement submitButton;
     @FindBy(xpath = "//a[contains(text(), 'Logged in as')]//b")
-    private  WebElement loginUsername;
+    private WebElement loginUsername;
 
 
-    public LoginPage ()
-    {
+    public LoginPage() {
         PageFactory.initElements(WebNavigatorHelper.getInstance().getBrowserDriver(), this);
 
     }
 
 
     // Form methods
-    public void fillInUsername(String username)
-    {
+    public void fillInUsername(String username) {
         userField.sendKeys(username);
     }
-    public void fillInPassword(String password)
-    {
+
+    public void fillInPassword(String password) {
         passwordField.sendKeys(password);
     }
 
-    public void clickLogin()
-    {
+    public void clickLogin() {
         submitButton.click();
     }
 
@@ -47,19 +44,18 @@ public class LoginPage {
      * verifies the login of the user
      */
 
-    public  boolean verifyLogin()
-    {
+    public boolean verifyLogin() {
         try {
             return loginUsername.isDisplayed();
         } catch (NoSuchElementException e) {
             return false;
         }
     }
+
     /**
      * fills the form and clicks the button for the login
      */
-    public void Login(String username,String password)
-    {
+    public void Login(String username, String password) {
         fillInUsername(username);
         fillInPassword(password);
         clickLogin();

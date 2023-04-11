@@ -64,7 +64,6 @@ public class PaymentPage {
         enterCVC(cvc);
         enterExpirationMonth(expirationMonth);
         enterExpirationYear(expirationYear);
-        // Click the Pay button
 
     }
 

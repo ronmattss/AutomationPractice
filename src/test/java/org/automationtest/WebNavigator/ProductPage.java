@@ -37,10 +37,7 @@ public class ProductPage {
         return searchResults;
     }
     // for some reason
-    public void setSearchResults() {
-        searchResults = WebNavigatorHelper.getInstance().getBrowserDriver().findElements(By.xpath("//div[@class='productinfo text-center']//a[@data-product-id]"));
-        System.out.println(getSearchResults().size());
-    }
+
     public void addProductToCart(WebElement product) {
 
         WebNavigatorHelper.getInstance().waitButton(product,500);

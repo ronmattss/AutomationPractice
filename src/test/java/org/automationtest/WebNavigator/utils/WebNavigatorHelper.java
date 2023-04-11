@@ -118,6 +118,8 @@ public class WebNavigatorHelper {
         {
             CustomLogger.logInfo("No popup ads dismissed");
         }
+
+        // for some reason (maybe in my environment) sometimes switching to defaultContent does not work
         browserDriver.switchTo().parentFrame();
         pauseExecution(1000);
         browserDriver.switchTo().defaultContent();
@@ -142,6 +144,7 @@ public class WebNavigatorHelper {
      */
     public void waitButton(WebElement button, long duration)
     {
+        CustomLogger.logInfo("Simulating Button click: "+ button.getText());
         WebDriverWait wait = new WebDriverWait(WebNavigatorHelper.getInstance().getBrowserDriver(), Duration.ofMillis(duration));
         wait.until(ExpectedConditions.elementToBeClickable(button));
         button.click();
