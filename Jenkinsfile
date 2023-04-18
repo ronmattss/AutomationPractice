@@ -4,7 +4,7 @@ pipeline {
   stages {
     stage('Checkout') {
       steps {
-        git branch: 'main', url: 'https://github.com/ronmattss/AutomationPractice'
+        git branch: 'main', url: 'https://github.com/your/repo.git'
       }
     }
     
@@ -17,18 +17,6 @@ pipeline {
     stage('Test') {
       steps {
         sh 'mvn test'
-      }
-    }
-    
-    stage('Cucumber') {
-      steps {
-        sh 'mvn test -Dcucumber.options="--tags @cucumber"'
-      }
-    }
-    
-    stage('Deploy') {
-      steps {
-        sh 'mvn deploy'
       }
     }
   }
