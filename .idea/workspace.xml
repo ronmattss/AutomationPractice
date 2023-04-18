@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5aea959e-03fe-455a-a9a8-93a312dfa128" name="Changes" comment="Fixed code formatting">
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/automationtest/WebNavigator/utils/WebNavigatorHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
