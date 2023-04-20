@@ -32,6 +32,9 @@ jobs:
         push: true
         tags: testcontainerproject.azurecr.io/${{ secrets.AzureAppService_ContainerUsername_19b53347e898439a9e5a129bc32f2c72 }}/automationpractice:${{ github.sha }}
         file: ./Dockerfile
+   
+    - name: Run Maven tests
+      run: mvn test
 
   deploy:
     runs-on: ubuntu-latest
