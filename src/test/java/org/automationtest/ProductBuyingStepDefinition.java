@@ -80,7 +80,7 @@ public class ProductBuyingStepDefinition {
         homePage.goToProductPage();
         CustomLogger.logInfo("User is on Products page");
 
-        // try and remove ads if present
+        
         try {
             WebNavigatorHelper.getInstance().dismissAd();
         } catch (Exception e) {
